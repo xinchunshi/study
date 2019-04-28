@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<!-- 
+ <data-sources>  
+    <data-source key="mysqlDB" type="org.apache.commons.dbcp.BasicDataSource">  
+            <set-property property="driverClassName" value="org.gjt.mm.mysql.Driver" />  
+            <set-property property="url" value="jdbc:mysql://localhost/db" />  
+            <set-property property="maxActive"   value="100"/>  
+            <set-property property="username"    value="root"/>  
+            <set-property property="password"    value="root"/>  
+            <set-property property="autoCommit"  value="true"/>  
+        </data-source>  
+  </data-sources>  --> 
+<package name="default" namespace="/" extends="struts-default">
+        <action name="admin" class="study.wshi.action.adminRightAction">
+            <result>/adminRight.jsp</result>
+        </action>
+        <action name="scan" class="study.wshi.action.scanAction">
+            <result>/success.jsp</result>
+        </action>
+        <action name="login" method="login" class="study.wshi.action.adminRightAction">
+            <result>/login.jsp</result>
+        </action>
+        
+    </package>
+    
+<!-- 开启使用开发模式，详细错误提示 -->
+      <constant name="struts.devMode" value="true"/>
+      <!-- 指定每次请求到达，重新加载资源文件 -->
+      <constant name="struts.i18n.reload" value="true"/>
+      <!-- 指定每次配置文件更改后，自动重新加载 -->
+      <constant name="struts.configuration.xml.reload" value="true"/>
+      <!-- 指定XSLT Result使用样式表缓存 -->
+       <constant name="struts.xslt.nocache" value="true"/>
+</struts>
